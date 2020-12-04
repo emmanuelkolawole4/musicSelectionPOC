@@ -176,6 +176,7 @@
 		4B5A71F7CF936BA79A67866AF62986DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550F7AECE4BDCCCB4A77F55AB0CAACDF /* Foundation.framework */; };
 		4BB2DA19D9A91F5286E44C890DF2E5A3 /* GDTCORClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3457147CAA5DA7F535801218E3178014 /* GDTCORClock.m */; };
 		4C7EB753984408DBC929F7AF1A1F4A21 /* FIRFirebaseUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 24461249227206A50E8E07699F4779E5 /* FIRFirebaseUserAgent.m */; };
+		4CBFAC45257A3CDB00D515B0 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBFAC44257A3CDB00D515B0 /* CoreServices.framework */; };
 		4CC4B94FEE751C8F9DEC6F1BCCB866E0 /* FIRStorageMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 19205C39CAF92D0AEEC31F730A8417B3 /* FIRStorageMetadata.m */; };
 		4E42C38A5A373D546A8CCE80201E8E50 /* FBLPromise+Delay.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E318C485A83B8833A55AF07C18870E0 /* FBLPromise+Delay.h */; };
 		51344AC69C0CFDADC25B1ED64F77D0F2 /* pb.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A660EDD811541BA7BECF7967060CDC2 /* pb.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -870,6 +871,7 @@
 		4B04652846993B972310A00537BC0A34 /* FBLPromisePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBLPromisePrivate.h; path = Sources/FBLPromises/include/FBLPromisePrivate.h; sourceTree = "<group>"; };
 		4C2A14E4632E8C8D8B6D86E9EA07856A /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7384A10735D48F6D794DB5640EBB71 /* FBLPromise+Race.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FBLPromise+Race.m"; path = "Sources/FBLPromises/FBLPromise+Race.m"; sourceTree = "<group>"; };
+		4CBFAC44257A3CDB00D515B0 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		4CFC5B451181608C86CC3194996EF7E8 /* FIRStorageTask_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRStorageTask_Private.h; path = FirebaseStorage/Sources/FIRStorageTask_Private.h; sourceTree = "<group>"; };
 		4E2AEBA155D45CDA3D2EFD646C0CF33C /* FBLPromiseError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBLPromiseError.h; path = Sources/FBLPromises/include/FBLPromiseError.h; sourceTree = "<group>"; };
 		4E318C485A83B8833A55AF07C18870E0 /* FBLPromise+Delay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBLPromise+Delay.h"; path = "Sources/FBLPromises/include/FBLPromise+Delay.h"; sourceTree = "<group>"; };
@@ -1263,6 +1265,7 @@
 				28DA1EA04DFC3CAB799AF54D22535E29 /* FirebaseCore.framework in Frameworks */,
 				7DD83565D997DFE58A7AFC1F88697CDB /* Foundation.framework in Frameworks */,
 				FC240F8A269CF66B4D3571678A53DF30 /* GTMSessionFetcher.framework in Frameworks */,
+				4CBFAC45257A3CDB00D515B0 /* CoreServices.framework in Frameworks */,
 				236F88651B308105E3C2F22D174C01FA /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1605,6 +1608,7 @@
 		6F9674235BCDEFBED75AB08689AFB4FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CBFAC44257A3CDB00D515B0 /* CoreServices.framework */,
 				E7FA9F57A37B0D434697B4B1F357555B /* FBLPromises.framework */,
 				BE77016A4FD98CEBBE1625D32D5B963C /* FirebaseCore.framework */,
 				B69954417253055A3632CC4BF387D741 /* FirebaseCoreDiagnostics.framework */,

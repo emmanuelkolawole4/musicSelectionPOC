@@ -20,7 +20,6 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         view.addSubview(selectedSongArtCover)
         view.addSubview(selectSongTitleLabel)
@@ -67,28 +66,35 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate{
     }
     
     func exportSong() {
-        let songURL = selectedSong.value(forProperty: MPMediaItemPropertyAssetURL) as? URL
+        guard let songURL = selectedSong.value(forProperty: MPMediaItemPropertyAssetURL) as? URL else { return }
 
-        guard let unwrappedSongURL = songURL,  selectedSong.hasProtectedAsset else {
-            print("You cant upload this song as it is protected.")
-            return
-        }
+//        guard let unwrappedSongURL = songURL,  selectedSong.hasProtectedAsset else {
+//            print("You cant upload this song as it is protected.")
+//            return
+//        }
 
         let storageRef = storage.reference()
 
         let audioRef = storageRef.child("audio/test.mp3")
 
-        let uploadTask = audioRef.putFile(from: unwrappedSongURL, metadata: nil) { metadata, error in
-          guard let metadata = metadata else {
+        let uploadTask = audioRef.putFile(from: songURL, metadata: nil) { metadata, error in
+            guard let _ = metadata, error == nil else {
+            print("Failed to upload", error?.localizedDescription ?? Any.self)
             return
           }
-          let size = metadata.size
+//          let size = metadata.size
           audioRef.downloadURL { (url, error) in
-            guard let downloadURL = url else {
-              return
-            }
+            guard let downloadURL = url, error == nil else { return }
+            let urlString = downloadURL.absoluteString
+            print("Download URL: \(urlString)")
           }
         }
+        
+        uploadTask.observe(.progress) { snapshot in
+            // Upload reported progress
+            let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
+            print("\(percentComplete) percent complete")
+          }
     }
     
     func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController) {
